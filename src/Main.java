@@ -10,6 +10,10 @@ public class Main {
 //        Имя: Сергей
 //        Отчество: Петрович
 //***
+        final String LC_SURNAME = "Surname";
+        final String LC_NAME = "Name";
+        final String LC_PATRONYMIC = "Patronymic";
+
         Scanner loScanner = new Scanner(System.in);
         System.out.println("Please enter your full name in the format: Ivanov Ivan Ivanovich");
 
@@ -18,13 +22,13 @@ public class Main {
 
         Fio loFio = new Fio();
         //Получить Фамилию
-        String lvSurname = loFio.getSurname(loFullFio);
+        String lvSurname = loFio.separFio(loFullFio, LC_SURNAME);
 
         //Получить Имя
-        String lvName = loFio.getName(loFullFio);
+        String lvName = loFio.separFio(loFullFio, LC_NAME);
 
         //Получить Отчество
-        String lvPatronymic = loFio.getPatronymic(loFullFio);
+        String lvPatronymic = loFio.separFio(loFullFio, LC_PATRONYMIC);
 
         System.out.println("Surname: " + lvSurname);
         System.out.println("Name: " + lvName);
